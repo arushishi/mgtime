@@ -1,7 +1,7 @@
 module ApplicationHelper
   # ページごとの完全なタイトルを返します。
   def full_title(page_title)
-    base_title = "入退室管理システム(mgTime)"
+    base_title = "mgTime(入退室管理システム)"
     if page_title.empty?
       base_title
     else
