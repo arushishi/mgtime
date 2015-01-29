@@ -10,6 +10,7 @@ class MUsersController < ApplicationController
   def create
     @m_user = MUser.new(user_params)
     if @m_user.save
+      sign_in @m_user
       flash[:success] = "mgTime!!!!!"
       redirect_to @m_user
     else
