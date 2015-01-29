@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 20150129190250) do
   end
 
   create_table "m_users", force: true, comment: "ユーザマスタ" do |t|
-    t.string   "user_name",      limit: 128, default: "No Name", null: false, comment: "ユーザ名"
-    t.string   "password",                   default: "No Pass", null: false, comment: "暗号化パスワード"
-    t.string   "remember_token",                                              comment: "ログイン状態保持トークン"
-    t.integer  "delete_flg",     limit: 1,   default: 0,         null: false, comment: "削除フラグ"
-    t.datetime "created_at",                                                  comment: "作成日時"
-    t.datetime "updated_at",                                                  comment: "修正日時"
+    t.string   "user_name",       limit: 128, default: "No Name", null: false, comment: "ユーザ名"
+    t.string   "password_digest",             default: "No Pass", null: false, comment: "暗号化パスワード"
+    t.string   "remember_token",                                               comment: "ログイン状態保持トークン"
+    t.integer  "delete_flg",      limit: 1,   default: 0,         null: false, comment: "削除フラグ"
+    t.datetime "created_at",                                                   comment: "作成日時"
+    t.datetime "updated_at",                                                   comment: "修正日時"
   end
 
   create_table "t_correcteddata", force: true, comment: "修正データ" do |t|
