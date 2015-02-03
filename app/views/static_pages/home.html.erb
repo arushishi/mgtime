@@ -1,11 +1,24 @@
-<% provide(:title, 'Home') %>
-<div class="center hero-unit">
-  <h1>入退室管理システム(mgTime)</h1>
-  <p>
-      入退室管理システム(mgTime) です。
-  </p>
+<% if signed_in? %>
 
+  <div class="punchdata">
+    <% if @t_punchdata.any? %>
+      <h3>打刻データ (<%= @t_punchdata.count %>)</h3>
+      <ol class="punchdata">
+        <%= render @t_punchdata %>
+      </ol>
+      <%= will_paginate @t_punchdata %>
+    <% end %>
+  </div>
+<% else %>
 
-  新規登録は<%= link_to "こちら＞＞登録ページへ", signup_path, class: "btn btn-large btn-primary" %>
-</div>
-
+  <% provide(:title, 'Home') %>
+  <div class="center hero-unit">
+    <h1>入退室管理システム(mgTime)</h1>
+    <p>
+        入退室管理システム(mgTime) です。
+    </p>
+  
+  
+    新規登録は<%= link_to "こちら＞＞登録ページへ", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

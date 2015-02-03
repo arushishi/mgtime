@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :m_cards
+
   resources :m_users
   resources :t_punchdata
   resources :sessions, only: [:new, :create, :destroy]

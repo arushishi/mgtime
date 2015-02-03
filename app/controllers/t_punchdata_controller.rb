@@ -10,6 +10,5 @@ class TPunchdataController < ApplicationController
   end
 
   def show
-    @t_punchdata = TPunchdata.all
   end
 end

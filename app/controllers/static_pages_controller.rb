@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @t_punchdata = TPunchdata.paginate(page: params[:page])
   end
 
   def help
