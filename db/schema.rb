@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203190250) do
+ActiveRecord::Schema.define(version: 20150203200250) do
 
   create_table "m_cards", force: true, comment: "カードマスタ" do |t|
     t.string   "card_identification_code", limit: 32, default: "No ID CODE", null: false, comment: "カード識別コード"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20150203190250) do
     t.datetime "created_at",                                                   comment: "作成日時"
     t.datetime "updated_at",                                                   comment: "修正日時"
   end
+
+  add_index "m_users", ["remember_token"], name: "index_m_users_on_remember_token", using: :btree
 
   create_table "t_correcteddata", force: true, comment: "修正データ" do |t|
     t.integer  "punch_id",                         default: 0,         null: false, comment: "打刻データID"

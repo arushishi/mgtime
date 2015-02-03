@@ -8,8 +8,8 @@ class AddComment < ActiveRecord::Migration
     t.change_comment :id, 'ID'
     t.change_comment :created_at, '作成日時'
     t.change_comment :updated_at, '修正日時'
-    t.add_index      :remember_token
   end
+  add_index(:m_users, [:remember_token])
   change_table :t_correcteddata do |t|
     t.change_comment :id, 'ID'
     t.change_comment :created_at, '作成日時'

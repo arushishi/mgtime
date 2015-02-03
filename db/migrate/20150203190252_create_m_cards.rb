@@ -1,10 +1,10 @@
 class CreateMCards < ActiveRecord::Migration
   def change
     create_table :m_cards do |t|
-      t.comment 'ƒJ[ƒhƒ}ƒXƒ^'
-      t.string :card_identification_code, :limit => 32, :null => false, :default => 'No ID CODE', :comment => 'ƒJ[ƒhŽ¯•ÊƒR[ƒh'
-      t.string :user_id, :limit => 32, :null => false, :default => 'No User', :comment => 'ƒ†[ƒUID'
-      t.integer :delete_flg, :limit => 1, :null => false, :default => 0, :comment => 'íœƒtƒ‰ƒO'
+      t.comment 'ã‚«ãƒ¼ãƒ‰ãƒžã‚¹ã‚¿'
+      t.string :card_identification_code, :limit => 32, :null => false, :default => 'No ID CODE', :comment => 'ã‚«ãƒ¼ãƒ‰è­˜åˆ¥ã‚³ãƒ¼ãƒ‰'
+      t.string :user_id, :limit => 32, :null => false, :default => 'No User', :comment => 'ãƒ¦ãƒ¼ã‚¶ID'
+      t.integer :delete_flg, :limit => 1, :null => false, :default => 0, :comment => 'å‰Šé™¤ãƒ•ãƒ©ã‚°'
 
       t.timestamps
     end

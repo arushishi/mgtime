@@ -1,11 +1,11 @@
 class CreateMUsers < ActiveRecord::Migration
   def change
     create_table :m_users do |t|
-      t.comment 'ƒ†[ƒUƒ}ƒXƒ^'
-      t.string :user_name, :limit => 128, :null => false, :default => 'No Name', :comment => 'ƒ†[ƒU–¼'
-      t.string :password_digest, :limit => 255, :null => false, :default => 'No Pass', :comment => 'ˆÃ†‰»ƒpƒXƒ[ƒh'
-      t.string :remember_token, :limit => 255, :comment => 'ƒƒOƒCƒ“ó‘Ô•ÛŽƒg[ƒNƒ“'
-      t.integer :delete_flg, :limit => 1, :null => false, :default => 0, :comment => 'íœƒtƒ‰ƒO'
+      t.comment 'ãƒ¦ãƒ¼ã‚¶ãƒžã‚¹ã‚¿'
+      t.string :user_name, :limit => 128, :null => false, :default => 'No Name', :comment => 'ãƒ¦ãƒ¼ã‚¶å'
+      t.string :password_digest, :limit => 255, :null => false, :default => 'No Pass', :comment => 'æš—å·åŒ–ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰'
+      t.string :remember_token, :limit => 255, :comment => 'ãƒ­ã‚°ã‚¤ãƒ³çŠ¶æ…‹ä¿æŒãƒˆãƒ¼ã‚¯ãƒ³'
+      t.integer :delete_flg, :limit => 1, :null => false, :default => 0, :comment => 'å‰Šé™¤ãƒ•ãƒ©ã‚°'
 
       t.timestamps
     end
