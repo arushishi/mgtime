@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129190250) do
+ActiveRecord::Schema.define(version: 20150203190250) do
 
   create_table "m_cards", force: true, comment: "カードマスタ" do |t|
     t.string   "card_identification_code", limit: 32, default: "No ID CODE", null: false, comment: "カード識別コード"

@@ -27,5 +27,13 @@ module Mgtime
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    config.paths.add "app/api", glob: "**/*.rb"
+    config.autoload_paths += %W(#{config.root}/app/api)
+
+    config.middleware.use(Rack::Config) do |env|
+      env['api.tilt.root'] = Rails.root.join 'app', 'views', 'api'
+    end
+
   end
 end
