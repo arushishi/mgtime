@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150203200250) do
 
   create_table "m_cards", force: true, comment: "カードマスタ" do |t|
     t.string   "card_identification_code", limit: 32, default: "No ID CODE", null: false, comment: "カード識別コード"
-    t.string   "user_id",                  limit: 32, default: "No User",    null: false, comment: "ユーザID"
+    t.string   "m_user_id",                limit: 32, default: "No User",    null: false, comment: "ユーザID"
     t.integer  "delete_flg",               limit: 1,  default: 0,            null: false, comment: "削除フラグ"
     t.datetime "created_at",                                                              comment: "作成日時"
     t.datetime "updated_at",                                                              comment: "修正日時"

@@ -1,5 +1,21 @@
-<h1>New m_user</h1>
+<% provide(:title, '登録') %>
+<h1>ユーザ登録</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@m_user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-<%= link_to 'Back', m_users_path %>
+      <%= f.label :user_name, "ユーザ名　（例：ミラ　太郎）" %>
+      <%= f.text_field :user_name %>
+
+      <%= f.label :password, "パスワード（6文字以上）" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "パスワード再入力" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

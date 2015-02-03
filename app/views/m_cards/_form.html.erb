@@ -8,8 +8,11 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
+  <%= f.label :card_identification_code, "カード識別番号" %>
+  <%= f.text_field :card_identification_code %>
 
   <div class="actions">
     <%= f.submit %>

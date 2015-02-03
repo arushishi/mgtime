@@ -12,6 +12,7 @@
   <tbody>
     <% @m_cards.each do |m_card| %>
       <tr>
+        <td><%= m_card.card_identification_code %></td>
         <td><%= link_to 'Show', m_card %></td>
         <td><%= link_to 'Edit', edit_m_card_path(m_card) %></td>
         <td><%= link_to 'Destroy', m_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>

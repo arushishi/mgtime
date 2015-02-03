@@ -70,5 +70,6 @@ class MCardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def m_card_params
       params[:m_card]
+      params.require(:m_card).permit(:card_identification_code)
     end
 end
