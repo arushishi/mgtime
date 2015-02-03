@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_m_user_path(@m_user) %> |
-<%= link_to 'Back', m_users_path %>
+<% provide(:title, @m_user.user_name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @m_user.user_name %>
+      </h1>
+    </section>
+  </aside>
+</div>
