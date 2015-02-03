@@ -5,15 +5,15 @@
   <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :user_name %, "ユーザ名">
+      <%= f.label :user_name, "ユーザ名" %>
       <%= f.text_field :user_name %>
 
-      <%= f.label :password %, "パスワード">
+      <%= f.label :password, "パスワード" %>
       <%= f.password_field :password %>
 
       <%= f.submit "ログイン", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "新規登録はこちら", signup_path %></p>
+    <p>未登録の場合： <%= link_to "新規登録はこちら", signup_path %></p>
   </div>
 </div>
