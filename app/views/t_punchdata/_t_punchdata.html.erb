@@ -1,8 +1,10 @@
-<li>
-  <span class="punched"><%= t_punchdata.card_identification_code %></span>
-  <span class="punched"><%= t_punchdata.access_control_kubun %></span>
-  <span class="punched"><%= t_punchdata.created_at.getlocal %></span>
-  <span class="timestamp">
+<tr>
+  <td><%= t_punchdata.card_identification_code %></td>
+  <td><%= t_punchdata.access_control_kubun %></td>
+  <td><%= t_punchdata.created_at.getlocal %></td>
+  <!--td>
     Punched <%= time_ago_in_words(t_punchdata.created_at) %> ago.
-  </span>
-</li>
+  </td-->
+</tr>
+
+

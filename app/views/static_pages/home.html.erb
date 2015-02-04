@@ -1,11 +1,18 @@
 <% if signed_in? %>
 
-  <div class="punchdata">
+  <div id="punchdata_table">
     <% if @t_punchdata.any? %>
       <h3>打刻データ (<%= @t_punchdata.count %>)</h3>
-      <ol class="punchdata">
-        <%= render @t_punchdata %>
-      </ol>
+      <table>
+        <tbody>
+        <tr>
+          <th>カード識別番号</th>
+          <th>入退室区分</th>
+          <th>打刻時刻</th>
+        </tr>
+          <%= render @t_punchdata %>
+        </tbody>
+      </table>
       <%= will_paginate @t_punchdata %>
     <% end %>
   </div>
