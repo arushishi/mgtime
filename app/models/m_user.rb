@@ -1,6 +1,7 @@
 class MUser < ActiveRecord::Base
   has_many :m_card
   has_many :t_punchdatum
+  has_many :t_correcteddatum
   before_save { self.user_name = user_name.downcase }
   before_create :create_remember_token
   validates :user_name, presence: true, length: { maximum: 128 },

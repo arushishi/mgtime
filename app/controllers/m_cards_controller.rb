@@ -1,5 +1,5 @@
 class MCardsController < ApplicationController
-  before_action :set_m_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_m_card, only: [:show, :edit, :update]
 
   # GET /m_cards
   # GET /m_cards.json

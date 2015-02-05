@@ -162,10 +162,11 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
+  padding: 2px;
   margin-bottom: 15px;
   @include box_sizing;
+  display: inline-block;
+  width: auto;
 }
 
 input {
@@ -273,15 +274,5 @@ aside {
   }
 }
 
-#m_card_created_at_1i,
-#m_card_created_at_2i,
-#m_card_created_at_3i,
-#m_card_created_at_4i,
-#m_card_created_at_5i
-{
-  display: inline-block;
-  width: auto;
-  padding: 2px 0;
-}
 
 

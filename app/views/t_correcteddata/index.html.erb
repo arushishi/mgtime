@@ -1,0 +1,37 @@
+<h1>Listing t_correcteddata</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>T punchdatum</th>
+      <th>M user</th>
+      <th>Access control kubun</th>
+      <th>Corrected time</th>
+      <th>Comment</th>
+      <th>Delete flg</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @t_correcteddata.each do |t_correcteddatum| %>
+      <tr>
+        <td><%= t_correcteddatum.t_punchdatum_id %></td>
+        <td><%= t_correcteddatum.m_user_id %></td>
+        <td><%= t_correcteddatum.access_control_kubun %></td>
+        <td><%= t_correcteddatum.corrected_time %></td>
+        <td><%= t_correcteddatum.comment %></td>
+        <td><%= t_correcteddatum.delete_flg %></td>
+        <td><%= link_to 'Show', t_correcteddatum %></td>
+        <td><%= link_to 'Edit', edit_t_correcteddatum_path(t_correcteddatum) %></td>
+        <td><%= link_to 'Destroy', t_correcteddatum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New T correcteddatum', new_t_correcteddatum_path %>

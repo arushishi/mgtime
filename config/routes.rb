@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :t_correcteddata
+
   resources :m_cards
 
   resources :m_users

@@ -1,0 +1,41 @@
+<%= form_for(@t_correcteddatum) do |f| %>
+  <% if @t_correcteddatum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@t_correcteddatum.errors.count, "error") %> prohibited this t_correcteddatum from being saved:</h2>
+
+      <ul>
+      <% @t_correcteddatum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="t_correcteddatum_form">
+      <%= f.label :t_punchdatum_id %>
+      <%= f.number_field :t_punchdatum_id %>
+      <%= f.label :access_control_kubun %>
+      <%= f.select(
+            :access_control_kubun,
+            {出勤: "Arrived",
+             退勤: "Left",
+             外出: "GoOut",
+             戻り: "GoBack"
+            })
+      %>
+      <%= f.label :corrected_time %>
+      <%= f.datetime_select(
+            :created_at,
+            use_month_numbers: true,
+            start_year:        (Time.now.year + 2),
+            end_year:          2014,
+            default:           Time.now,
+            minute_step:       15)
+      %>
+      <%= f.label :comment %>
+      <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
