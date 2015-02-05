@@ -25,7 +25,6 @@ class MCardsController < ApplicationController
   # POST /m_cards.json
   def create
     @m_card = MCard.new(m_card_params)
-    @m_card.m_user_id = params[:id]
     respond_to do |format|
       if @m_card.save
         format.html { redirect_to @m_card, notice: 'M card was successfully created.' }
@@ -69,7 +68,7 @@ class MCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def m_card_params
-      params[:m_card]
+#      params[:m_card]
       params.require(:m_card).permit(:card_identification_code)
     end
 end

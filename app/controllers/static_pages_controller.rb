@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-    @t_punchdata = TPunchdata.paginate(page: params[:page])
+    @m_user = current_user
+    if @m_user
+      @t_punchdata = @m_user.t_punchdatum.paginate(page: params[:page])
+    end
   end
 
   def help
