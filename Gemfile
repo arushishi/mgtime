@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'thin', '1.6.3'
 gem 'migration_comments', '~> 0.3.2'
+gem 'coffee-script-source', '1.8.0'
 
 gem 'mysql2', '0.3.17'
 group :development, :test do
