@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="t_correcteddatum_form">
-      <%= f.label :t_punchdatum_id %>
-      <%= f.number_field :t_punchdatum_id %>
+      <!--%= f.label :t_punchdatum_id %-->
+      <!--%= f.number_field :t_punchdatum_id %-->
       <%= f.label :access_control_kubun %>
       <%= f.select(
             :access_control_kubun,
@@ -25,7 +25,7 @@
       %>
       <%= f.label :corrected_time %>
       <%= f.datetime_select(
-            :created_at,
+            :corrected_time,
             use_month_numbers: true,
             start_year:        (Time.now.year + 2),
             end_year:          2014,
@@ -33,7 +33,7 @@
             minute_step:       15)
       %>
       <%= f.label :comment %>
-      <%= f.text_field :comment %>
+      <%= f.text_field :comment, required: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

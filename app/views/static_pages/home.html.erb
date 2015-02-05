@@ -2,13 +2,17 @@
 
   <div id="punchdata_table">
     <% if @t_punchdata.any? %>
-      <h3>打刻データ (<%= @t_punchdata.count %>)</h3>
+      <h3><%= @current_user.user_name %></h3>
+      <%= link_to "打刻忘れ追加", new_t_correcteddatum_path, class: "btn btn-large btn-primary" %>
+      <%= link_to "打刻修正", t_correcteddata_path, class: "btn btn-large btn-primary" %>
+      <%= will_paginate @t_punchdata %>
       <table>
         <tbody>
         <tr>
           <th>カード識別番号</th>
           <th>入退室区分</th>
           <th>打刻時刻</th>
+          <th>コメント</th>
         </tr>
           <%= render @t_punchdata %>
         </tbody>

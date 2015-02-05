@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     m_user = MUser.find_by(user_name: params[:session][:user_name].downcase)
     if m_user && m_user.authenticate(params[:session][:password])
       sign_in m_user
-      redirect_to m_user
+      redirect_to root_path
     else
       flash.now[:error] = 'パスワードが一致しません'
       render 'new'

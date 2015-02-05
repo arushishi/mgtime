@@ -23,6 +23,7 @@ class TCorrecteddataController < ApplicationController
   # POST /t_correcteddata.json
   def create
     @t_correcteddatum = TCorrecteddatum.new(t_correcteddatum_params)
+    @t_correcteddatum.attributes = { m_user_id: current_user.id }
 
     respond_to do |format|
       if @t_correcteddatum.save

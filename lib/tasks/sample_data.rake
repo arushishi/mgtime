@@ -9,13 +9,17 @@ namespace :db do
 end
 
 def make_m_users
-    admin = MUser.create!(user_name: "Eijiro Katata",
-                         password: "katata718",
-                         password_confirmation: "katata718",
-                         delete_flg: false)
+  password  = "password"
+  MUser.create!(user_name: "Eijiro Katata",
+                 password: password,
+                 password_confirmation: password,
+                 delete_flg: false)
+  MUser.create!(user_name: "Ruiko Katata",
+                 password: password,
+                 password_confirmation: password,
+                 delete_flg: false)
   9.times do |n|
     name  = Faker::Name.name
-    password  = "password"
     MUser.create!(user_name:     name,
                  password: password,
                  password_confirmation: password,
@@ -31,26 +35,70 @@ def make_t_punchdata
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
   TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
-  TPunchdatum.create!(m_user_id: 1,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 1,card_identification_code: "01010410BC135502",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Arrived",punch_time: "2015-02-05 12:34:56")
+  TPunchdatum.create!(m_user_id: 2,card_identification_code: "0112041221139322",access_control_kubun: "Left",punch_time: "2015-02-05 12:34:56")
 end
 
 def make_m_cards
