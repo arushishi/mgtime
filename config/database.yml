@@ -28,10 +28,13 @@ test: &test
   password: tguardian
 
 production:
-  <<: *default
-  database: mgtime
-  username: guardian
-  password: guardian
+ encoding: utf8
+ adapter: postgresql
+ port: 5432
+ username: eyqorzsldplome
+ host: ec2-54-243-49-204.compute-1.amazonaws.com:5432
+ database: d6urf3bhsoourv
+ password: 7I2FY_s_L03pYZDPFqs2UZ2eTx
  
 cucumber:
   <<: *test
