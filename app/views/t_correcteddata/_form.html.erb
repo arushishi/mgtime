@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="t_correcteddatum_form">
-      <!--%= f.label :t_punchdatum_id %-->
-      <!--%= f.number_field :t_punchdatum_id %-->
-      <%= f.label :access_control_kubun %>
+      <%= f.label :打刻No %>
+      <%= f.number_field :t_punchdatum_id %>
+      <%= f.label :入退室区分 %>
       <%= f.select(
             :access_control_kubun,
             {出勤: "Arrived",
@@ -23,7 +23,7 @@
              戻り: "GoBack"
             })
       %>
-      <%= f.label :corrected_time %>
+      <%= f.label :日時 %>
       <%= f.datetime_select(
             :corrected_time,
             use_month_numbers: true,
@@ -32,10 +32,10 @@
             default:           Time.now,
             minute_step:       15)
       %>
-      <%= f.label :comment %>
+      <%= f.label :コメント（必須） %>
       <%= f.text_field :comment, required: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit("追加") %>
   </div>
 <% end %>

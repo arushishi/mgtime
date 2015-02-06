@@ -3,33 +3,43 @@
   <div id="punchdata_table">
     <% if @t_punchdata.any? %>
       <h3><%= @current_user.user_name %></h3>
-      <%= link_to "打刻忘れ追加", new_t_correcteddatum_path, class: "btn btn-large btn-primary" %>
-      <%= link_to "打刻修正", t_correcteddata_path, class: "btn btn-large btn-primary" %>
-      <%= will_paginate @t_punchdata %>
+      <%= link_to "打刻忘れ追加", new_t_correcteddatum_path, class: "btn btn-primary" %>
+      <%= link_to "打刻修正", new_t_correcteddatum_path, class: "btn btn-primary" %>
+      <br>
+      <br>
+      <!--%= will_paginate @t_punchdata %-->
       <table>
         <tbody>
         <tr>
-          <th>カード識別番号</th>
+          <th>打刻No</th>
           <th>入退室区分</th>
           <th>打刻時刻</th>
           <th>コメント</th>
         </tr>
-          <%= render @t_punchdata %>
+          <!--%= render @t_punchdata %-->
+<% @t_punchdata.each do |result| %>
+<%=  %>
+<tr class="<%= result["data_kubun"] %>">
+  <td><%= result["t_punchdatum_id"] %></td>
+  <td><%= result["access_control_kubun"] %></td>
+  <td><%= result["punch_time"].getlocal %></td>
+  <td><%= result["comment"] %></td>
+</tr>
+<% end %>
+
         </tbody>
       </table>
-      <%= will_paginate @t_punchdata %>
+      <!--%= will_paginate @t_punchdata %-->
     <% end %>
+  <!--%= debug(@t_punchdata) %-->
   </div>
 <% else %>
 
   <% provide(:title, 'Home') %>
   <div class="center hero-unit">
     <h1>入退室管理システム(mgTime)</h1>
-    <p>
-        入退室管理システム(mgTime) です。
-    </p>
   
   
-    新規登録は<%= link_to "こちら＞＞登録ページへ", signup_path, class: "btn btn-large btn-primary" %>
+    新規登録は<%= link_to "こちら＞＞登録ページへ", signup_path, class: "btn btn-primary" %>
   </div>
 <% end %>

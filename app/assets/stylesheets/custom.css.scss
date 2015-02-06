@@ -270,7 +270,12 @@ aside {
   }
   table tr:hover {
     background: #bbd4ee;
-    cursor:pointer;
+  }
+  table tr.corrected {
+    background: #ffc2c0;
+  }
+  table tr.corrected:hover {
+    background: #ff7272;
   }
 }
 
