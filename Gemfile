@@ -13,7 +13,6 @@ gem 'thin', '1.6.3'
 gem 'migration_comments', '~> 0.3.2'
 gem 'coffee-script-source', '1.8.0'
 
-gem 'mysql2', '0.3.17'
 group :development, :test do
   gem 'mysql2', '0.3.17'
  # gem 'sqlite3', '1.3.8'
@@ -21,6 +20,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'mysql2', '0.3.17'
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
