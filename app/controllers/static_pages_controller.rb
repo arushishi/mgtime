@@ -9,7 +9,7 @@ select
   , punch_time as "punch_time"
   , 'punch'  as "data_kubun"
   , ''  as "comment"
-  , CAST(id AS CHAR) as "punch_id"
+  , id as "punch_id"
 from
   t_punchdata 
 where m_user_id = ?
@@ -20,7 +20,7 @@ select
   , corrected_time as "punch_time"
   , 'corrected'  as "data_kubun"
   , comment  as "comment"
-  , '--' as "punch_id"
+  , 0 as "punch_id"
 from
   t_correcteddata 
 where m_user_id = ?
