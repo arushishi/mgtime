@@ -2,35 +2,34 @@ class StaticPagesController < ApplicationController
   def home
     @m_user = current_user
     if @m_user
-   #   @t_punchdata = @m_user.t_punchdatum.paginate(page: params[:page])
-      @t_punchdata = ActiveRecord::Base.connection.select(<<SQL)
+      str = <<SQL
 select * from(
-SELECT
+select
     access_control_kubun as "access_control_kubun"
   , punch_time as "punch_time"
   , 'punch'  as "data_kubun"
   , ''  as "comment"
-  , id as "t_punchdatum_id"
-FROM
-  dmgtime.t_punchdata 
-where m_user_id = 1
-and id not in (SELECT t_punchdatum_id FROM dmgtime.t_correcteddata where m_user_id = 1)
+  , id as "punch_id"
+from
+  t_punchdata 
+where m_user_id = ?
+and id not in (select t_punchdatum_id from t_correcteddata where m_user_id = ?)
 union all
-SELECT
+select
     access_control_kubun as "access_control_kubun"
   , corrected_time as "punch_time"
   , 'corrected'  as "data_kubun"
   , comment  as "comment"
-  , '-' as "t_punchdatum_id"
-FROM
-  dmgtime.t_correcteddata 
-where m_user_id = 1
+  , '-' as "punch_id"
+from
+  t_correcteddata 
+where m_user_id = ?
 and corrected_time is not null
 ) u
-order by u.punch_time desc, u.access_control_kubun, u.t_punchdatum_id desc
+order by u.punch_time desc, u.access_control_kubun, u.punch_id desc
 ;
 SQL
- #.paginate(page: params[:page])
+      @t_punchdata = TCorrecteddatum.find_by_sql([str, @m_user.id, @m_user.id, @m_user.id])
     end
   end
 
