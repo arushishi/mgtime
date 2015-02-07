@@ -20,7 +20,7 @@
 <% @t_punchdata.each do |result| %>
 <%=  %>
 <tr class="<%= result["data_kubun"] %>">
-  <td><%= result["punch_id"] %></td>
+  <td><%= result["punch_id"]==0?"-":result["punch_id"] %></td>
   <td><%= result["access_control_kubun"] %></td>
   <td><%= result["punch_time"].getlocal %></td>
   <td><%= result["comment"] %></td>
