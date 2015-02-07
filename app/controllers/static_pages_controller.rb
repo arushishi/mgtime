@@ -20,7 +20,7 @@ select
   , corrected_time as "punch_time"
   , 'corrected'  as "data_kubun"
   , comment  as "comment"
-  , '-' as "punch_id"
+  , '--' as "punch_id"
 from
   t_correcteddata 
 where m_user_id = ?
