@@ -1,0 +1,9 @@
+# server run
+bundle exec rake assets:precompile RAILS_ENV=production
+rails server -eproduction
+
+# db make
+bundle exec rake db:migrate RAILS_ENV=production
+# db remake
+bundle exec rake db:migrate:reset RAILS_ENV=production
+

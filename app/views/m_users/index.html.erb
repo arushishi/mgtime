@@ -1,10 +1,11 @@
-<h1>Listing m_users</h1>
+<h1>※管理者専用※ <br>ユーザマスタメンテナンス</h1>
 
+<div id="punchdata_table">
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
+      <th>ユーザID</th>
+      <th>名前</th>
       <th></th>
     </tr>
   </thead>
@@ -12,14 +13,15 @@
   <tbody>
     <% @m_users.each do |m_user| %>
       <tr>
-        <td><%= link_to 'Show', m_user %></td>
-        <td><%= link_to 'Edit', edit_m_user_path(m_user) %></td>
-        <td><%= link_to 'Destroy', m_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= m_user.id %></td>
+        <td><%= m_user.user_name %></td>
+        <td><%= link_to '＞＞削除', m_user, method: :delete, data: { confirm: 'でじま?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New M user', new_m_user_path %>
+<%= link_to 'カードマスタメンテナンス', m_cards_path %>

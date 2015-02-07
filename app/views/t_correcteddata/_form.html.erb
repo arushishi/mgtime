@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="t_correcteddatum_form">
-      <%= f.label :打刻No %>
-      <%= f.number_field :t_punchdatum_id %>
+      <%= f.label :打刻No（追加時は「0」。修正時は修正対象の『打刻No』を入力。） %>
+      <%= f.number_field :t_punchdatum_id, value: 0, required: true %>
+      <%= f.label :削除（打刻Noに『打刻No』を入力してチェック。） %>
+      <%= check_box_tag :punchdata, true, false, {}  %>
       <%= f.label :入退室区分 %>
       <%= f.select(
             :access_control_kubun,
@@ -36,6 +38,6 @@
       <%= f.text_field :comment, required: true %>
   </div>
   <div class="actions">
-    <%= f.submit("追加") %>
+    <%= f.submit("追加・修正") %>
   </div>
 <% end %>

@@ -27,8 +27,8 @@ class MCardsController < ApplicationController
     @m_card = MCard.new(m_card_params)
     respond_to do |format|
       if @m_card.save
-        format.html { redirect_to @m_card, notice: 'M card was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @m_card }
+        format.html { redirect_to m_cards_path, notice: 'カード追加しました' }
+        format.json { render action: 'show', status: :created, location: m_cards_path }
       else
         format.html { render action: 'new' }
         format.json { render json: @m_card.errors, status: :unprocessable_entity }
@@ -53,6 +53,7 @@ class MCardsController < ApplicationController
   # DELETE /m_cards/1
   # DELETE /m_cards/1.json
   def destroy
+    set_m_card
     @m_card.destroy
     respond_to do |format|
       format.html { redirect_to m_cards_url }
@@ -69,6 +70,6 @@ class MCardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def m_card_params
 #      params[:m_card]
-      params.require(:m_card).permit(:card_identification_code)
+      params.require(:m_card).permit(:m_user_id, :card_identification_code)
     end
 end

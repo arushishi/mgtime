@@ -1,26 +1,31 @@
-<h1>Listing m_cards</h1>
+<h1>※管理者専用※ <br>カードマスタメンテナンス</h1>
 
+<div id="punchdata_table">
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ユーザID</th>
+      <th>カード識別番号</th>
+      <th>削除</th>
     </tr>
   </thead>
 
   <tbody>
     <% @m_cards.each do |m_card| %>
       <tr>
+        <td><%= m_card.m_user_id %></td>
         <td><%= m_card.card_identification_code %></td>
-        <td><%= link_to 'Show', m_card %></td>
-        <td><%= link_to 'Edit', edit_m_card_path(m_card) %></td>
-        <td><%= link_to 'Destroy', m_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '＞＞削除', m_card, method: :delete, data: { confirm: '削除します' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New M card', new_m_card_path %>
+<%= link_to 'カード新規追加', new_m_card_path, class: "button_format" %>
+<br>
+<br>
+<br>
+<%= link_to 'ユーザマスタメンテナンス', m_users_path %>

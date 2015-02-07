@@ -11,10 +11,12 @@
 
     </div>
   <% end %>
+  <%= f.label :m_user_id, "ユーザID" %>
+  <%= f.text_field :m_user_id %>
   <%= f.label :card_identification_code, "カード識別番号" %>
   <%= f.text_field :card_identification_code %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit("追加") %>
   </div>
 <% end %>

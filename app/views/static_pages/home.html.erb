@@ -1,10 +1,10 @@
 <% if signed_in? %>
 
+  <h3><%= @current_user.user_name %></h3>
   <div id="punchdata_table">
     <% if @t_punchdata.any? %>
-      <h3><%= @current_user.user_name %></h3>
-      <%= link_to "打刻忘れ追加", new_t_correcteddatum_path, class: "btn btn-primary" %>
-      <%= link_to "打刻修正", new_t_correcteddatum_path, class: "btn btn-primary" %>
+      <%= link_to "打刻忘れ追加・打刻修正・打刻削除", new_t_correcteddatum_path, class: "button_format" %>
+      <%= link_to "修正削除", t_correcteddata_path, class: "button_format" %>
       <br>
       <br>
       <!--%= will_paginate @t_punchdata %-->
@@ -16,30 +16,28 @@
           <th>打刻時刻</th>
           <th>コメント</th>
         </tr>
-          <!--%= render @t_punchdata %-->
-<% @t_punchdata.each do |result| %>
-<%=  %>
-<tr class="<%= result["data_kubun"] %>">
-  <td><%= result["punch_id"]==0?"-":result["punch_id"] %></td>
-  <td><%= result["access_control_kubun"] %></td>
-  <td><%= result["punch_time"].getlocal %></td>
-  <td><%= result["comment"] %></td>
-</tr>
-<% end %>
+          <% @t_punchdata.each do |result| %>
+          <tr class="<%= result["data_kubun"] %>">
+            <td><%= result["punch_id"]==0?"-":result["punch_id"] %></td>
+            <td><%= result["access_control_kubun"] %></td>
+            <td><%= result["punch_time"].localtime.strftime("%Y年 %m月 %d日 %H:%M:%S") %></td>
+            <td><%= result["comment"] %></td>
+          </tr>
+          <% end %>
 
         </tbody>
       </table>
       <!--%= will_paginate @t_punchdata %-->
     <% end %>
-  <%= debug(@t_punchdata) %>
+  <!--%= debug(@t_punchdata) %-->
   </div>
 <% else %>
 
   <% provide(:title, 'Home') %>
   <div class="center hero-unit">
     <h1>入退室管理システム(mgTime)</h1>
-  
-  
-    新規登録は<%= link_to "こちら＞＞登録ページへ", signup_path, class: "btn btn-primary" %>
+    <%= link_to "ログイン", signin_path, class: "button_format" %>
+    <br>
+    新規登録はこちら＞＞<%= link_to "登録ページ", signup_path %>へ
   </div>
 <% end %>
